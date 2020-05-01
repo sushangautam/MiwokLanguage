@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
     //private void openNumbersActivity(View view){
     //    Intent i = new Intent(this, NumbersActivity.class);
@@ -21,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
 
     // Find the View that shows the numbers category
     TextView numbers = (TextView) findViewById(R.id.numbers);
+    TextView colors = (TextView) findViewById(R.id.colors);
+    TextView phrases = (TextView) findViewById(R.id.phrases);
+    TextView family = (TextView) findViewById(R.id.family);
+
 
     // Set a click listener on that View
     numbers.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +34,32 @@ public class MainActivity extends AppCompatActivity {
             startActivity(numbersIntent);
         }
     });
+
+        colors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent numbersIntent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(numbersIntent);
+            }
+        });
+
+        phrases.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent numbersIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(numbersIntent);
+            }
+        });
+
+        family.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent numbersIntent = new Intent(MainActivity.this, FamilyActivity.class);
+                startActivity(numbersIntent);
+            }
+        });
+
+    }
 
 
 
